@@ -8,7 +8,7 @@ type CategoryType = {
   value: string;
 };
 
-export default function Home() {
+export default function Categories() {
   const [categories, setCategory] = useState<CategoryType[]>([]);
   const [value, setValue] = useState<string>("");
   async function foodCategory() {
@@ -30,27 +30,14 @@ export default function Home() {
     foodCategory();
   }, []);
 
-  const addFood = async () => {
-    const newFood = { CategoryName: value };
-    const response = await fetch(`http://localhost:4000/add-movie`, {
-      method: "POST",
-      body: JSON.stringify(newFood),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    });
-
-    const foodData = await response.json();
-    setCategory((prevCategory) => [...prevCategory, foodData]);
-  };
   return (
     <div>
       {categories?.map((category) => (
-        <div key={category._id} className="flex justify-row-reverse ">
+        <div key={category._id} className="flex justify-center items-col-">
           {category.CategoryName}
         </div>
       ))}
     </div>
   );
 }
+export { Categories };
