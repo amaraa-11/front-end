@@ -1,8 +1,5 @@
-import Categories from "@/app/admin/_components/Categories";
-export default function Home() {
-  return (
-    <div>
-      <Categories />
-    </div>
-  );
+import Navigation from "./_components/Navigation";
+
+export default function Page() {
+  return <div></div>;
 }
