@@ -1,5 +1,9 @@
 "use client";
-
-export default function Home() {
-  return <div></div>;
+import { Home } from "./web/page";
+export default function Page() {
+  return (
+    <div>
+      <Home />
+    </div>
+  );
 }

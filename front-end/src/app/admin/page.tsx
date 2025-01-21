@@ -1,5 +1,3 @@
-import Navigation from "./_components/Navigation";
-
-export default function Page() {
+export default function Admin() {
   return <div></div>;
 }

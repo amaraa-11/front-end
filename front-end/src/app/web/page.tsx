@@ -4,8 +4,9 @@ import { Facebook } from "lucide-react";
 import { User } from "lucide-react";
 
 import "./styles.css";
+import Categories from "../admin/Categories";
 
-export default function App() {
+export default function Home() {
   return (
     <div>
       <div className="w-[full] h-[68px] bg-[#18181B] flex items-center justify-between  ">
@@ -16,13 +17,14 @@ export default function App() {
         </div>
       </div>
       <img className="w-full h-[780px] " src="homeLogo.png" />
-      <div className="text-[30px] font-[600] text-black ml-16 h-[500px]">
+      <div className="text-[30px] font-[600] text-[#FFFFFF] ml-16 h-[500px] mt-8">
         Categories
+        <Categories />
       </div>
 
       <div className="bg-white w-[400px] h-[350px] rounded-3xl shadow-lg">
         <img
-          src=""
+          src="foodImage.png"
           alt="Finger food"
           className="w-full h-[210px] object-cover object-center rounded-t-3xl"
         />
@@ -60,7 +62,9 @@ export default function App() {
               NOMNOM
             </span>
             <div className="text-[16px] text-[#FAFAFA]  flex flex-col gap-2 ">
-              <span className="hover:text-gray-500 ">Home</span>
+              <a className="hover:text-gray-500" href="#">
+                Home
+              </a>
               <span className="hover:text-gray-500">Contact us</span>
               <span className="hover:text-gray-500">Delivery zone</span>
             </div>
@@ -118,3 +122,4 @@ export default function App() {
     </div>
   );
 }
+export { Home };
