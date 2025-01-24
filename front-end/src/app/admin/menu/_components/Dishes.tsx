@@ -21,9 +21,6 @@ export const Dishes = () => {
     fetchCategory();
   }, []);
 
-  //   const grouped = Object.groupBy(food, ({ category }) => category);
-
-  //   console.log(grouped)
   return (
     <div className="flex flex-col gap-5 w-11/12 mt-10 ml-20">
       {!params.id

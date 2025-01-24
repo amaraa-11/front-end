@@ -30,7 +30,7 @@ export const EditDish = ({ food, id }: { food: FoodType; id: string }) => {
   };
 
   const onChange = (e: any) => {
-    console.log("--", e.target.name, e.target.value);
+    console.log(e.target.name, e.target.value);
     setEditFood({
       ...editFood,
       [e.target.name]: e.target.value,
@@ -93,7 +93,7 @@ export const EditDish = ({ food, id }: { food: FoodType; id: string }) => {
             Dish name
           </Label>
           <Input
-            value={editFood?.name}
+            value={editFood?.foodName}
             id="foodName"
             name="name"
             type="text"

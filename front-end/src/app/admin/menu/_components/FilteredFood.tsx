@@ -8,7 +8,7 @@ import { CardComp } from "./Card";
 
 export type FoodType = {
   _id: string;
-  name: string;
+  foodName: string;
   price: number;
   image: string;
   ingredients: string;
