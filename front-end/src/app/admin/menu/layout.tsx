@@ -1,4 +1,6 @@
-import SideBar from "./sideBar";
+import Navigation from "../_components/Navigation";
+import Categories from "../Categories";
+import SideBar from "../sideBar";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 export default function RootLayout({
   children,
@@ -8,8 +10,10 @@ export default function RootLayout({
   return (
     <div className="bg-muted flex gap-6  ">
       <SideBar />
-
-      {children}
+      <div>
+        <Navigation />
+        {children}
+      </div>
     </div>
   );
 }

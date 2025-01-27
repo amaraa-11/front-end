@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 type CategoryType = {
@@ -39,23 +40,24 @@ export default function Navigation() {
   }, []);
 
   return (
-    <div className="bg-white w-full h-[176px] py-6 px-8 rounded-xl shadow-md mt-10">
-      <h4 className="text-[18px] font-semibold mb-4">Dishes category</h4>
-      <div className="flex flex-wrap items-center gap-4">
-        {categories?.map((category) => (
-          <div
-            key={category._id}
-            className="flex items-center justify-center px-4 py-2 border border-[#E4E4E7] rounded-full text-[#18181B] text-sm"
+    <div className="flex justify-center">
+      <div className="bg-white w-11/12 h-[176px] py-6 px-8 rounded-xl shadow-md mt-10 ">
+        <h4 className="text-[18px] font-semibold mb-4">Dishes category</h4>
+        <div className="flex flex-wrap items-center gap-4">
+          {categories?.map((category) => (
+            <Link key={category._id} href={`/admin/menu/${category._id}`}>
+              <div className="flex items-center justify-center px-4 py-2 border border-[#E4E4E7] rounded-full text-[#18181B] text-sm">
+                {category.CategoryName}
+              </div>
+            </Link>
+          ))}
+          <button
+            className="flex items-center justify-center w-9 h-9 bg-red-500 text-white rounded-full text-lg font-bold"
+            onClick={addCategory}
           >
-            {category.CategoryName}
-          </div>
-        ))}
-        <button
-          className="flex items-center justify-center w-9 h-9 bg-red-500 text-white rounded-full text-lg font-bold"
-          onClick={addCategory}
-        >
-          +
-        </button>
+            +
+          </button>
+        </div>
       </div>
     </div>
   );

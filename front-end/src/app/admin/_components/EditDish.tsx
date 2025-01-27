@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
-import { FoodType } from "../_components/FilteredFood";
+import { FoodType } from "./FilteredFood";
 import { useState } from "react";
 
 export const EditDish = ({ food, id }: { food: FoodType; id: string }) => {
@@ -93,7 +93,7 @@ export const EditDish = ({ food, id }: { food: FoodType; id: string }) => {
             Dish name
           </Label>
           <Input
-            value={editFood?.foodName}
+            value={editFood?.name}
             id="foodName"
             name="name"
             type="text"

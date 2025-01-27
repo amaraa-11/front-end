@@ -12,9 +12,9 @@ import { Button } from "@/components/ui/button";
 import { Plus, Image } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Dispatch, SetStateAction, useState } from "react";
-// import { CategoryType } from "../_components/Dishes";
-import { FoodType } from "../_components/FilteredFood";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { CategoryType } from "./Dishes";
+import { FoodType } from "./FilteredFood";
 
 interface AddDishProps {
   CategoryName: string;
@@ -32,7 +32,7 @@ export const AddDish = ({ CategoryName, _id, setFoods }: AddDishProps) => {
   });
 
   const addDish = async () => {
-    const response = await fetch("http://localhost:4000/food", {
+    const response = await fetch("http://localhost:4000/food/", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -43,11 +43,11 @@ export const AddDish = ({ CategoryName, _id, setFoods }: AddDishProps) => {
     const newFood = await response.json();
 
     console.log(newFood);
-    setFoods && setFoods((prev) => [...prev, newFood]);
+    setFoods && setFoods((prev) => [...prev, newFood.newItem]);
   };
 
   const onChange = (e: any) => {
-    console.log(e.target.name, e.target.value);
+    console.log("--", e.target.name, e.target.value);
     setFood({
       ...food,
       [e.target.name]: e.target.value,
