@@ -205,7 +205,7 @@ export const EditDish = ({ food, id }: { food: FoodType; id: string }) => {
             </Button>
           </DialogClose>
           <DialogClose asChild>
-            <Button onClick={editDish}>Edit dish</Button>
+            <Button onClick={editDish}>Save changes</Button>
           </DialogClose>
         </div>
       </DialogContent>

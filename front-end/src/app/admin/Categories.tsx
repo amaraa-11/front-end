@@ -28,11 +28,11 @@ export default function Categories() {
 
   return (
     <div className="mt-10">
-      <div className="flex flex-wrap items-center gap-4">
+      <div className=" flex gap-5">
         {categories?.map((category) => (
           <div
             key={category._id}
-            className="flex justify-between px-4 py-2 border bg-[#FFFFFF] rounded-full text-[#18181B] text-sm "
+            className="flex justify-center px-4 py-2 border bg-[#FFFFFF] rounded-full text-[#18181B] text-sm hover:border-[#EF4444] font-light space-x-2"
           >
             {category.CategoryName}
           </div>

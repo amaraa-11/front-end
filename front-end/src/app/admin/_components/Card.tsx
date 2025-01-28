@@ -16,7 +16,7 @@ export const CardComp = ({ food, id }: any) => {
           <span className="text-red-500 ">{food.name}</span>
           <span>${food.price}</span>
         </div>
-        <h4 className="text-xs">{food.ingredients}</h4>
+        <h4 className="text-xs text-[#09090B]">{food.ingredients}</h4>
       </div>
     </Card>
   );

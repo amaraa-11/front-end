@@ -6,9 +6,11 @@ export default function SideBar() {
   return (
     <div className="w-[205px] h-screen  bg-white ">
       <div className="flex items-center justify-center mt-8">
-        <div>
-          <img src="/adminLogo.png" />
-        </div>
+        <Link href={"/web"}>
+          <div>
+            <img src="/adminLogo.png" />
+          </div>
+        </Link>
         <div>
           <p className="text-[18px] font-[600] leading-[28px]">NomNom</p>
           <p className="text-[12px] font-[400] leading-[16px] text-[#71717A]">
