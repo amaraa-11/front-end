@@ -22,7 +22,7 @@ export const Dishes = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-5 w-11/12 mt-10 ml-20">
+    <div className="flex flex-col gap-5 w-11/12 mt-10 ">
       {!params.id
         ? foodCategory?.map((category) => (
             <div key={category._id}>

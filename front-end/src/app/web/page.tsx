@@ -9,14 +9,14 @@ import Categories from "../admin/Categories";
 export default function Home() {
   return (
     <div>
-      <div className="w-[full] h-[68px] bg-[#18181B] flex items-center justify-between  ">
+      <div className="w-full inset-0  h-[68px] bg-[#18181B] flex items-center justify-between sticky z-10">
         <img className="w-[146px] h-[44px] ml-16 " src="headerLogo.png" />
         <div className="text-white flex  mr-16 gap-4 ">
           <ShoppingCart />
           <User />
         </div>
       </div>
-      <img className="w-full h-[780px] " src="homeLogo.png" />
+      <img className="w-full h-[900px] " src="homeLogo.png" />
       <div className="text-[30px] font-[600] text-[#FFFFFF] ml-16 h-[500px] mt-8">
         Categories
         <Categories />
@@ -110,7 +110,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center mt-36">
           <div className="w-[1450px] h-[84px] border-t-2 border-gray-500 flex justify-around text-[#71717A] text-[14px] ">
-            <div className="mt-5 flex justify-start gap-20 w-[1450px]">
+            <div className="mt-5 flex justify-between gap-20 w-[1450px] ">
               <p> Copy right 2024 © Nomnom LLC </p>
               <p> Privacy policy </p>
               <p>Terms and conditoin</p>
