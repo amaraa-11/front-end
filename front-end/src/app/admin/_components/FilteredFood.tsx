@@ -13,6 +13,7 @@ export type FoodType = {
   image: string;
   ingredients: string;
   category: string;
+  CategoryName: string;
 };
 
 export const FilteredFood = ({ _id, CategoryName }: CategoryType) => {
