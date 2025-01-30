@@ -32,7 +32,7 @@ export const AddDish = ({ CategoryName, _id, setFoods }: AddDishProps) => {
   });
 
   const addDish = async () => {
-    const response = await fetch("http://localhost:4000/food/", {
+    const response = await fetch("http://localhost:4000/food", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -42,7 +42,6 @@ export const AddDish = ({ CategoryName, _id, setFoods }: AddDishProps) => {
     });
     const newFood = await response.json();
 
-    console.log(newFood);
     setFoods && setFoods((prev) => [...prev, newFood.newItem]);
   };
 
@@ -96,7 +95,7 @@ export const AddDish = ({ CategoryName, _id, setFoods }: AddDishProps) => {
           <div className="grid w-full max-w-sm items-center gap-1.5">
             <Label htmlFor="foodName">Food name</Label>
             <Input
-              value={food.name}
+              value={food?.name}
               id="foodName"
               name="name"
               type="text"
@@ -129,10 +128,10 @@ export const AddDish = ({ CategoryName, _id, setFoods }: AddDishProps) => {
         </div>
         <div className="grid w-full items-center gap-1.5">
           <h1 className="text-sm">Food image</h1>
-          {food.image !== "" ? (
+          {food?.image !== "" ? (
             <div
               className={`w-full h-[135px] object-cover object-center rounded-t-3xl `}
-              style={{ backgroundImage: `url(${food.image})` }}
+              style={{ backgroundImage: `url(${food?.image})` }}
             ></div>
           ) : (
             <Label

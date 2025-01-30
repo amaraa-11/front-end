@@ -52,7 +52,6 @@ export default function Navigation() {
     });
     setNewCategory("");
   };
-  console.log(foodCategory);
 
   return (
     <div className="flex  relative   ">

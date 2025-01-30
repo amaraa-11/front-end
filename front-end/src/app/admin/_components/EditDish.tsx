@@ -14,8 +14,6 @@ import { Label } from "@radix-ui/react-label";
 import { Input } from "@/components/ui/input";
 import { FoodType } from "./FilteredFood";
 import { useState } from "react";
-import Categories from "../Categories";
-import { CategoryType } from "./Dishes";
 
 export const EditDish = ({ food, id }: { food: FoodType; id: string }) => {
   const [editFood, setEditFood] = useState<FoodType>(food);

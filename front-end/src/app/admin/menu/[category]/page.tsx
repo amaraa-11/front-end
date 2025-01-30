@@ -27,7 +27,7 @@ export default function Menu() {
   }, []);
 
   return (
-    <div className="flex  mt-10">
+    <div className="flex mt-10">
       <div className="w-11/12 p-5 flex flex-col gap-5 rounded-xl bg-background mt-2">
         <h4 className="text-xl font-semibold">{foodCategory?.CategoryName}</h4>
         <div className="flex flex-wrap gap-4">
