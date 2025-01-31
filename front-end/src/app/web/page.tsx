@@ -1,12 +1,39 @@
+"use client";
 import { ShoppingCart } from "lucide-react";
 import { Instagram } from "lucide-react";
 import { Facebook } from "lucide-react";
 import { User } from "lucide-react";
-
 import "./styles.css";
 import Categories from "../admin/Categories";
+import { useState, useEffect } from "react";
+import { CardComp } from "../admin/_components/Card";
+import { AddDish } from "../admin/_components/AddDish";
+import { Card } from "@/components/ui/card";
+import { FilteredFood, FoodType } from "../admin/_components/FilteredFood";
+import { CategoryType } from "../admin/_components/Dishes";
+import { Dishes } from "./_components/Dishes";
 
 export default function Home() {
+  const [categories, setCategories] = useState<CategoryType[]>([]);
+
+  async function fetchAll() {
+    const res = await fetch(`http://localhost:4000/food-category`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await res.json();
+    setCategories(data);
+  }
+
+  useEffect(() => {
+    fetchAll();
+  }, []);
+  console.log(categories);
+
   return (
     <div>
       <div className="w-full inset-0  h-[68px] bg-[#18181B] flex items-center justify-between sticky z-10">
@@ -17,12 +44,21 @@ export default function Home() {
         </div>
       </div>
       <img className="w-full h-[900px] " src="homeLogo.png" />
-      <div className="text-[30px] font-[600] text-[#FFFFFF] ml-16 h-[500px] mt-8 gap-10">
+      <div className="text-[30px] font-[600] text-[#FFFFFF] ml-16 mt-8 gap-10">
         Categories
-        <Categories />
+        <div className=" flex gap-5 mt-3">
+          {categories?.map((category) => (
+            <div
+              key={category._id}
+              className="flex justify-center px-4 py-2 border bg-[#FFFFFF] rounded-full text-[#18181B] text-sm hover:border-[#EF4444] font-light space-x-2"
+            >
+              {category.CategoryName}
+            </div>
+          ))}
+        </div>
+        <Dishes />
       </div>
-
-      <footer className="bg-[#18181B] w-full h-[auto]">
+      <footer className="bg-[#18181B] w-full">
         <div className="  w-full h-[92px] bg-[#EF4444] text-white text-[30px] font-[600] flex items-center justify-center overflow-hidden ">
           <div className="text-animation-infinite-scroll flex gap-16">
             <p>Fresh fast delivery</p>

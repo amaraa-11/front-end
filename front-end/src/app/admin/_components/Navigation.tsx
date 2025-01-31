@@ -36,6 +36,7 @@ export default function Navigation() {
     const data = await res.json();
     setCategory(data);
   }
+  
 
   useEffect(() => {
     fetchAll();
